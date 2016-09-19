@@ -45,3 +45,19 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+.gitignore.bak
+.svn
+.idea
+wwwroot/phpMyAdmin
+vendor
+wwwroot/_
+wwwroot/__
+Document
+tests
+Cache/
+tests
+V/Views/
+_widget/
+Pb/
