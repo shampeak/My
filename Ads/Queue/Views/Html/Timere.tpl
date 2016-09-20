@@ -1,5 +1,5 @@
 
-<h3>定时执行 <small>守护</small></h3>
+<h3>定时执行 <small>任务 / 页面缓存 / 检查页面 / 生成page相关页面</small></h3>
 
 <div class="progress">
 
@@ -54,8 +54,6 @@
                 $("#progressdelay").html(data.delay);
                 $("#progresschannel").html(data.channel);
                 $("#progresscount").html(data.num);
-
-
                 if(data.pressstop ==1){
                 }else{
                     setTimeout(function(){

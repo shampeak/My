@@ -1,10 +1,10 @@
 <?php
 /**
- * addons �б� ע��
+ *
  */
 return [
 
-        'Welcome',
+    'Welcome',
     'V',
     'Admin',
     'Pc'

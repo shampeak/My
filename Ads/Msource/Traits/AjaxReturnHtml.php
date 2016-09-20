@@ -1,5 +1,5 @@
 <?php
-namespace Ads\Queue\Traits;
+namespace Ads\Msource\Traits;
 
 /**
  * Created by PhpStorm.

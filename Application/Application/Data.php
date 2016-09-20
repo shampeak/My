@@ -26,6 +26,13 @@ class Data
         $this->rootpath = \Grace\Server\Server::getInstance()->Config('Config')['Data'];
     }
 
+    public function rootpath($path = ''){
+        if(!empty($path)){
+            $this->rootpath = $path ;
+        }
+        return $this;
+    }
+
     public function key($key='Default')
     {
         $this->key = $key;

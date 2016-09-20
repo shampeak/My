@@ -1,6 +1,6 @@
 <?php
 
-namespace Ads\Queue\Traits;
+namespace Ads\Msource\Traits;
 
 /**
  * Created by PhpStorm.
@@ -10,15 +10,24 @@ namespace Ads\Queue\Traits;
  * ajax返回部件
  */
 
-trait Arr
+trait Strtomap
 {
 
     /**
-     * 针对字符型存储的数据,进行字符和数组转换函数
-     * 切分字符默认为 "\n"
-     *
+     * @param $key
      */
-    public function getArr($str,$chr="\n")
+    public function strtomap($str = '')
+    {
+        $res = [];
+        $ar = $this->_getArr($str);
+        foreach($ar as $key=>$s){
+            $_ar = explode(':',$s);
+            if(!empty($_ar[0]))$res[$_ar[0]] = $_ar[1];
+        }
+        return $res;
+    }
+
+    public function _getArr($str,$chr="\n")
     {
         $arr = explode($chr,$str);
         foreach($arr as $key=>$value){
@@ -32,9 +41,6 @@ trait Arr
         return $arr;
     }
 
-    public function getStr($arr,$chr="\n")
-    {
-        return implode($chr,$arr);
-    }
+
 
 }

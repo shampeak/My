@@ -1,6 +1,6 @@
 <?php
 
-namespace Ads\Queue\Traits;
+namespace Ads\Msource\Traits;
 
 /**
  * Created by PhpStorm.
@@ -40,6 +40,9 @@ trait Data
         {
             halt('\Ads\Pm\Traits\Data::set Data Key error');
         }
+
+        $dir = $this->cachepath = __DIR__.'/../Data/';
+        !is_dir($dir) && mkdir($dir);
         $file = $this->cachepath = __DIR__.'/../Data/'.$key.'.data';
         $value = json_encode($value);
         @file_put_contents($file,$value);

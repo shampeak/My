@@ -5,7 +5,7 @@
 
             <div class="form-group">
 
-                <label for="inputEmail3" class="col-sm-2 control-label">类别设置</label>
+                <label for="inputEmail3" class="col-sm-1 control-label">类别设置</label>
 
                 <div class="col-sm-3">
                     <label for="inputEmail3">大类</label>
@@ -16,6 +16,11 @@
                 <div class="col-sm-3">
                     <label for="inputEmail3">小类</label>
                     <textarea name="mclassdataxiao" class="form-control" rows="20">{$dataxiao}</textarea>
+                </div>
+
+                <div class="col-sm-3">
+                    <label for="inputEmail3">关系</label>
+                    <textarea name="mclassdatarela" class="form-control" rows="20">{$datarela}</textarea>
                 </div>
 
             </div>

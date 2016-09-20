@@ -1,6 +1,6 @@
 <?php
 
-namespace Ads\Queue\Traits;
+namespace Ads\Msource\Traits;
 
 trait PostRequest
 {
