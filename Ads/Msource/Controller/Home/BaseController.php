@@ -61,6 +61,17 @@ class BaseController{
                         'ads'   => 'msource/html/edit',
                         'hidden'=> 0,
                     ],
+                    [ 'title' => 'SteponeData',
+                        'des'   => '设置',
+                        'ads'   => 'msource/html/steponedata',
+                        'hidden'=> 0,
+                    ],
+                    [ 'title' => 'SteptwoData',
+                        'des'   => '设置',
+                        'ads'   => 'msource/html/steptwodata',
+                        'hidden'=> 0,
+                    ],
+
                 ]
             ]
         ];

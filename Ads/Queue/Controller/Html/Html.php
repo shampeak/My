@@ -7,6 +7,7 @@ class Html  {
     use \Ads\Queue\Traits\Data;
     use \Ads\Queue\Traits\Caiji;
     use \Ads\Queue\Traits\Str;
+    use \Ads\Queue\Traits\Arr;
 
     public function __construct(){
     }
@@ -21,8 +22,22 @@ class Html  {
      */
     public function doChannel($data)
     {
-        $source = adsdata('msource/html/listgetlist');
 
+        $queuechannelstepone = application('data')->get('QueueChannelStepone');
+
+        //$stop = $this->get('pressstop');
+        if ($queuechannelstepone){
+            //控制
+            $data['channel']     = 1;
+            $data['pressstop']   = 1;
+            $data['delay']       = 100;
+            $data['width']       = '100%';
+            $data['msg']       = '已经执行完毕';
+            return $data;
+        }
+
+
+        $source = adsdata('msource/html/listgetlist');
         //执行任务
         if($data['begin']){     //初始任务
             //控制
@@ -82,6 +97,7 @@ class Html  {
 
         if($data['pressid']+1 >= count($source)){
             $data['pressstop']   = 1;
+            application('data')->set('QueueChannelStepone',1);
             $this->set('pressdoid',"0");
         }
         return $data;
@@ -126,7 +142,7 @@ class Html  {
         $url = "http://list.youku.com/category/show/c_96_g_犯罪_a_美国_r_2016_p_1.html";
 
 
-        $html = $this->Htmlget($url);
+        //$html = $this->Htmlget($url);
 
 
 
@@ -142,6 +158,17 @@ class Html  {
 
         return  server('Smarty')->ads('queue/html/list')->fetch('',[
         ]);
+    }
+
+
+    public function dogeturllisttext()
+    {
+
+    }
+
+    public function dogeturllistnull()
+    {
+
     }
 
 

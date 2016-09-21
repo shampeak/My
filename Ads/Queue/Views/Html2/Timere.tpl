@@ -1,5 +1,5 @@
 
-<h3>定时执行 <small>任务 / 页面缓存 / 检查页面 / 生成page相关页面</small></h3>
+<h3>第二阶段任务 <small>任务 / 获取有效的采集列表</small></h3>
 
 <div class="progress">
 
@@ -33,13 +33,11 @@
         <td>提示</td>
         <td><div id="progressmsg221212">
 
+原始数据缓存 120秒<br>
 
                 重新执行 需要删除文件
-                pressdoid.data /
-                urllisttext.data /
-                urllistnull.data /
-                pressstop.data
-
+                $queuechannelstepone = application('data')->get('QueueChannelStepone');
+                application('data')->set('QueueChannelStepone',1);
 
 
             </div></td>
@@ -59,7 +57,7 @@
         var _data = data;
         $.ajax({
             type: "Post",
-            url: '/man/?queue/html/timere',
+            url: '/man/?queue/html2/timere',
             data:data,
             dataType:'json',
             success: function(data){
