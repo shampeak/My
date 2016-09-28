@@ -6,6 +6,10 @@ class Home extends BaseController
 
     public function __construct(){
         parent::__construct();
+        //登录验证
+        if(!Application('AdminAuth')->isLogin()){
+            R('/man/login');
+        }
     }
 
     public function doIndexPost()

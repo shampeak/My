@@ -8,6 +8,10 @@ class Home extends BaseController
 
     public function __construct(){
         parent::__construct();
+        if(!Application('AdminAuth')->isLogin()){
+            R('/man/loginuser');
+        }
+
     }
 
     /**
@@ -15,7 +19,13 @@ class Home extends BaseController
      */
     public function doIndex()
     {
-        \App\Ads::Run();
+
+        $list = adsdata('setup/data/list');
+
+        view('',[
+            'list' => $list
+        ]);
+
     }
 
 }

@@ -28,6 +28,7 @@ class Html  {
 
             $pid = server('db')->getone("select menuId from menu where package =  'Package' and parentid = 0");
             server('db')->query("delete from menu where package =  '".ucfirst($chr)."'");
+
             foreach($menu as $key=>$value){
                 $res = [
                     'package'   => ucfirst($chr),
@@ -115,7 +116,6 @@ class Html  {
             $file[$value] = is_file($_file);
             $zip[$value] = is_file($_zip);
         }
-
         return  server('Smarty')->ads('pm/html/List')->fetch('',[
             'list' => $list,
             'dir'  => $dir,

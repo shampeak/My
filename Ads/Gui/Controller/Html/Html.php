@@ -20,6 +20,29 @@ class Html
         }
     }
 
+    public function doLogin2Post(){
+
+        if(Application('AdminAuth')->auth($_POST['password'])){
+            $this->AjaxReturn([
+                'code'=>200,
+                'url'=>'/'
+            ]);
+        }else{
+            $this->AjaxReturn([
+                'code'=>-200,
+                'msg'=>'密码错',
+            ]);
+        }
+    }
+
+
+    public function doLogin2()
+    {
+        return server('Smarty')->ads('gui/Html/Login2')->display('',[
+        ]);
+    }
+
+
     /**
      * 后台首页
      */

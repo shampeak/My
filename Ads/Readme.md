@@ -14,8 +14,6 @@
  * Install.sql      //安装执行
  * Uninstall.sql    //卸载执行
  * Install.lock     //anzhuang 完毕之后写入
- * Config.setup.json 配置表单生成数据
- * Config.data.json 配置表单保存数据
  */
 ```
 
@@ -30,6 +28,12 @@
  * setup        //返回setup界面
  * menu     返回菜单数据 insert 进入menu表
  */
+ 整理如下
+public function doApi(){}
+public function doVersion(){}
+public function doDepend(){}
+public function doDependTable(){}
+public function doMenu(){}
 ```
 
 ### 控制器约定
