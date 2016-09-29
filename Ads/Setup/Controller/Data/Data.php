@@ -16,5 +16,22 @@ class Data {
         return $list;
     }
 
+    public function doType(){
+        $list = $this->get("Swlx");
+        $ar = $this->getArr($list);
+        $res  = [];
+        foreach($ar as $key=>$value){
+            if(!empty($value)){
+                $__ar = explode(':',$value);
+                $k = trim($__ar[0],'/');
+                if($k){
+                    $res[$k] = trim($__ar[1]);
+                }
+            }
+        }
+        return $res;
+    }
+
+
 
 }

@@ -184,6 +184,11 @@ $(function() {
         showAjaxModalnl($(this).attr("rel"),title)
     });
 
+    $('.shamboxfull').click(function(){
+        var title = $(this).attr("title")
+        showAjaxModalshamboxfull($(this).attr("rel"),title)
+    });
+
 });
 
 
@@ -317,3 +322,23 @@ function showAjaxModalnl(url,title)
     });
 }
 
+function showAjaxModalshamboxfull(url,title)
+{
+    $('.modal_ok').unbind("click");
+    if ( $("#modal-shamL").length > 0 ) {
+    } else {
+        $(document.body).append("<!-- Modal sham (Ajax Modal)--><div class=\"modal fade\" id=\"modal-shamL\"><div class=\"modal-dialog modal-lg\" style=\"width:100%\"><div class=\"modal-content\"><div class=\"modal-header\"><button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button><h4 class=\"modal-title\">Title</h4></div><div class=\"modal-body\">Content is loading...</div><div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-white modal_close\" data-dismiss=\"modal\">关闭</button></div></div></div></div>");
+    }
+    jQuery('#modal-shamL').modal('show', {backdrop: 'static'});
+    jQuery.ajax({
+        url: url,
+        success: function(response)
+        {
+            console.log(url);
+            jQuery('#modal-shamL .modal-title').html(title);
+            jQuery('#modal-shamL .modal-body').html(response);
+            var JS = $("script[type='text/dialog']").html();
+            eval(JS);
+        }
+    });
+}
