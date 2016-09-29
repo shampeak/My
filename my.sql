@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: 2016-09-19 18:16:38
+-- Generation Time: 2016-09-29 14:18:31
 -- 服务器版本： 5.5.47
 -- PHP Version: 5.5.30
 
@@ -19,6 +19,122 @@ SET time_zone = "+00:00";
 --
 -- Database: `my`
 --
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `gupiao_index`
+--
+
+CREATE TABLE `gupiao_index` (
+  `id` int(11) NOT NULL,
+  `code` varchar(16) DEFAULT NULL,
+  `title` varchar(16) DEFAULT NULL,
+  `active` int(11) NOT NULL DEFAULT '1',
+  `gpcode` varchar(16) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `gupiao_index`
+--
+
+INSERT INTO `gupiao_index` (`id`, `code`, `title`, `active`, `gpcode`) VALUES
+(1, '002011', '盾安', 1, NULL),
+(2, '600157', '永泰', 1, NULL),
+(3, '600777', '新潮', 1, NULL),
+(4, '999999', '黄金', 1, '999999');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `gupiao_opt`
+--
+
+CREATE TABLE `gupiao_opt` (
+  `optId` int(11) NOT NULL,
+  `code` varchar(16) NOT NULL,
+  `opt` varchar(16) NOT NULL,
+  `num` varchar(11) NOT NULL,
+  `price` varchar(16) NOT NULL,
+  `type` varchar(16) NOT NULL,
+  `createAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `gupiao_opt`
+--
+
+INSERT INTO `gupiao_opt` (`optId`, `code`, `opt`, `num`, `price`, `type`, `createAt`) VALUES
+(30, '600157', 'B', '2400', '4.28', 'ground', '2016-08-30 22:47:15'),
+(20, '002011', 'B', '1000', '11.60', 'ground', '2016-08-30 22:39:30'),
+(19, '002011', 'B', '900', '11.60', 'ground', '2016-08-30 22:39:16'),
+(31, '600157', 'B', '2400', '4.10', 'ground', '2016-08-30 22:47:27'),
+(25, '600777', 'B', '600', '16.67', 'ground', '2016-08-30 22:42:13'),
+(26, '600777', 'B', '800', '17.06', 'ground', '2016-08-30 22:42:26'),
+(27, '600777', 'B', '600', '16.74', 'ground', '2016-08-30 22:42:42'),
+(28, '600777', 'B', '700', '16.10', 'ground', '2016-08-30 22:42:58'),
+(34, '999999', 'B', '0.1', '284.52', '', '2016-08-30 23:00:42'),
+(35, '999999', 'B', '0.2', '284.52', '', '2016-08-30 23:01:11'),
+(36, '999999', 'B', '0.2', '284.52', '', '2016-08-30 23:01:28'),
+(37, '999999', 'B', '0.2', '284.52', '', '2016-08-30 23:01:40'),
+(60, '999999', 'S', '0.1', '287', '', '2016-09-06 06:43:34'),
+(47, '002011', 'B', '500', '10.95', '', '2016-09-04 22:28:31'),
+(38, '999999', 'B', '0.6', '282.20', '', '2016-08-30 23:35:17'),
+(39, '999999', 'B', '0.5', '281.30', '', '2016-08-31 05:08:39'),
+(44, '999999', 'S', '0.5', '282', '', '2016-09-02 04:00:43'),
+(62, '600777', 'B', '300', '15.83', 'ground', '2016-09-06 17:35:11'),
+(45, '999999', 'S', '0.6', '283', '', '2016-09-02 04:32:10'),
+(59, '999999', 'S', '0.4', '286', '', '2016-09-06 04:25:55'),
+(54, '999999', 'S', '0.2', '285', '', '2016-09-05 23:12:21'),
+(49, '600157', 'B', '1400', '4.01', '', '2016-09-04 22:39:50'),
+(53, '002011', 'S', '500', '11.13', '', '2016-09-05 21:57:24'),
+(65, '999999', 'B', '0.1', '285.80', '', '2016-09-11 17:19:33'),
+(63, '600157', 'S', '1400', '4.04', '', '2016-09-08 21:33:57'),
+(64, '600777', 'B', '400', '15.32', 'ground', '2016-09-08 21:34:51'),
+(66, '999999', 'B', '0.1', '285.30', '', '2016-09-11 17:49:50'),
+(67, '999999', 'B', '0.1', '284.50', '', '2016-09-12 05:48:56'),
+(69, '600777', 'S', '300', '14.86', '', '2016-09-12 17:42:42'),
+(70, '600777', 'S', '400', '14.86', '', '2016-09-12 17:42:50'),
+(72, '999999', 'B', '2', '281.13', '', '2016-09-16 05:40:55'),
+(74, '999999', 'B', '0.5', '282.39', '', '2016-09-18 17:23:43'),
+(79, '999999', 'S', '0.2', '286', '', '2016-09-22 04:22:24'),
+(76, '999999', 'S', '2', '282.04', '', '2016-09-18 23:11:50'),
+(77, '002011', 'B', '698', '10.67', 'ground', '2016-09-19 17:46:28'),
+(78, '999999', 'S', '0.5', '283', '', '2016-09-20 23:37:21'),
+(81, '999999', 'S', '0.1001', '286.50', '', '2016-09-23 02:19:34'),
+(83, '600777', 'B', '400', '14.7', '', '2016-09-26 17:33:20'),
+(84, '600777', 'B', '100', '14.7', '', '2016-09-26 17:33:45'),
+(85, '999999', 'B', '0.3', '285.09', 'ground', '2016-09-27 06:09:50');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `gupiao_optgroup`
+--
+
+CREATE TABLE `gupiao_optgroup` (
+  `id` int(11) NOT NULL,
+  `code` varchar(16) NOT NULL,
+  `group` text,
+  `createAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `gupiao_optgroup`
+--
+
+INSERT INTO `gupiao_optgroup` (`id`, `code`, `group`, `createAt`) VALUES
+(45, '999999', '["54","35"]', '2016-09-06 04:26:45'),
+(27, '002011', '["53","47"]', '2016-09-05 21:57:27'),
+(47, '999999', '["44","39"]', '2016-09-06 04:40:15'),
+(48, '999999', '["45","38"]', '2016-09-06 04:40:19'),
+(49, '999999', '["59","37","36"]', '2016-09-06 04:40:35'),
+(50, '999999', '["60","34"]', '2016-09-06 06:43:49'),
+(52, '600157', '["63","49"]', '2016-09-08 21:34:04'),
+(60, '999999', '["76","72"]', '2016-09-18 23:12:17'),
+(61, '999999', '["78","74"]', '2016-09-20 23:37:31'),
+(63, '999999', '["79","67","66"]', '2016-09-22 04:23:03'),
+(64, '999999', '["81","65"]', '2016-09-23 02:19:40');
 
 -- --------------------------------------------------------
 
@@ -44,6 +160,10 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`menuId`, `package`, `title`, `des`, `ads`, `icon`, `parentId`, `hidden`, `sort`, `active`) VALUES
+(306, 'Sw', '启航', '修改', 'sw/html/index', 'glyphicon glyphicon-home', '305', 0, 9, 0),
+(305, 'Sw', '思维', '思维管理', 'sw/home/index', 'glyphicon glyphicon-home', '23', 0, 0, 0),
+(303, 'Setup', '管理', '前端 : 设置', 'setup/home/index', 'glyphicon glyphicon-home', '0', 0, 0, 0),
+(304, 'Setup', '首页管理', '修改', 'setup/html/edit', 'glyphicon glyphicon-home', '303', 0, 9, 0),
 (23, 'Package', 'Package', '', 'Pm/home/index', '', '0', 0, 9, 0),
 (167, 'Menu', '编辑', '编辑', 'menu/html/edit', 'glyphicon glyphicon-home', '164', 1, 30, 0),
 (166, 'Menu', '添加', '添加', 'menu/html/add', 'glyphicon glyphicon-home', '164', 0, 20, 0),
@@ -54,13 +174,20 @@ INSERT INTO `menu` (`menuId`, `package`, `title`, `des`, `ads`, `icon`, `parentI
 (176, 'User', '修改', '修改', 'user/html/edit', 'glyphicon glyphicon-home', '173', 1, 0, 0),
 (170, 'Config', '系统配置', '系统配置', 'config/html/list', 'glyphicon glyphicon-home', '168', 0, 0, 0),
 (169, 'Config', '配置管理', '配置管理', 'config/html/man', 'glyphicon glyphicon-home', '168', 0, 0, 0),
-(215, 'Queue', '列表', '列表', 'queue/html/list', 'glyphicon glyphicon-home', '214', 0, 90, 0),
-(216, 'Queue', 're', 're', 'queue/html/timere', 'glyphicon glyphicon-home', '214', 0, 20, 0),
+(278, 'Wx', '基础设置', '修改', 'wx/html/setup', 'glyphicon glyphicon-home', '275', 0, 0, 0),
+(277, 'Wx', '接口设置', '修改', 'wx/html/apisetup', 'glyphicon glyphicon-home', '275', 0, 0, 0),
+(276, 'Wx', '列表', '用户列表', 'wx/html/list', 'glyphicon glyphicon-home', '275', 0, 30, 0),
+(258, 'Queue', 'Stepone', 're', 'queue/html/timere', 'glyphicon glyphicon-home', '256', 0, 20, 0),
+(259, 'Queue', 'Steptwo', 're', 'queue/html2/timere', 'glyphicon glyphicon-home', '256', 0, 20, 0),
 (175, 'User', '添加', '添加', 'user/html/add', 'glyphicon glyphicon-home', '173', 0, 0, 0),
 (174, 'User', '列表', '用户列表', 'user/html/list', 'glyphicon glyphicon-home', '173', 0, 0, 0),
-(221, 'Mclass', 'M分类管理', 'M分类管理', 'mclass/html/index', 'glyphicon glyphicon-home', '23', 0, 0, 0),
+(251, 'Msource', 'SteptwoData', '设置', 'msource/html/steptwodata', 'glyphicon glyphicon-home', '247', 0, 0, 0),
+(250, 'Msource', 'SteponeData', '设置', 'msource/html/steponedata', 'glyphicon glyphicon-home', '247', 0, 0, 0),
+(257, 'Queue', '列表', '列表', 'queue/html/list', 'glyphicon glyphicon-home', '256', 0, 90, 0),
 (222, 'Mclass', '列表', '列表', 'mclass/html/list', 'glyphicon glyphicon-home', '221', 0, 30, 0),
-(223, 'Mclass', '设置', '设置', 'mclass/html/edit', 'glyphicon glyphicon-home', '221', 0, 0, 0);
+(223, 'Mclass', '设置', '设置', 'mclass/html/edit', 'glyphicon glyphicon-home', '221', 0, 0, 0),
+(249, 'Msource', '设置', '设置', 'msource/html/edit', 'glyphicon glyphicon-home', '247', 0, 0, 0),
+(248, 'Msource', '列表', '列表', 'msource/html/list', 'glyphicon glyphicon-home', '247', 0, 30, 0);
 
 -- --------------------------------------------------------
 
@@ -76,6 +203,37 @@ CREATE TABLE `queue` (
   `level` int(11) NOT NULL DEFAULT '0',
   `active` int(11) NOT NULL DEFAULT '1',
   `description` varchar(128) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `sw`
+--
+
+CREATE TABLE `sw` (
+  `id` int(11) NOT NULL,
+  `pid` int(11) NOT NULL,
+  `cid` int(11) NOT NULL,
+  `rid` int(11) NOT NULL,
+  `type` varchar(16) NOT NULL,
+  `title` varchar(128) NOT NULL,
+  `des` varchar(128) NOT NULL,
+  `sort` int(11) NOT NULL,
+  `createAt` int(11) NOT NULL,
+  `active` tinyint(2) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `swresource`
+--
+
+CREATE TABLE `swresource` (
+  `id` int(11) NOT NULL,
+  `md` int(11) NOT NULL,
+  `url` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -242,6 +400,24 @@ INSERT INTO `user_group` (`groupId`, `groupName`, `groupChr`, `active`, `sort`, 
 --
 
 --
+-- Indexes for table `gupiao_index`
+--
+ALTER TABLE `gupiao_index`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `gupiao_opt`
+--
+ALTER TABLE `gupiao_opt`
+  ADD PRIMARY KEY (`optId`);
+
+--
+-- Indexes for table `gupiao_optgroup`
+--
+ALTER TABLE `gupiao_optgroup`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `menu`
 --
 ALTER TABLE `menu`
@@ -257,6 +433,12 @@ ALTER TABLE `menu`
 --
 ALTER TABLE `queue`
   ADD PRIMARY KEY (`queueId`);
+
+--
+-- Indexes for table `sw`
+--
+ALTER TABLE `sw`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `system_config`
@@ -288,10 +470,25 @@ ALTER TABLE `user_group`
 --
 
 --
+-- 使用表AUTO_INCREMENT `gupiao_index`
+--
+ALTER TABLE `gupiao_index`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- 使用表AUTO_INCREMENT `gupiao_opt`
+--
+ALTER TABLE `gupiao_opt`
+  MODIFY `optId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+--
+-- 使用表AUTO_INCREMENT `gupiao_optgroup`
+--
+ALTER TABLE `gupiao_optgroup`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+--
 -- 使用表AUTO_INCREMENT `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `menuId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=224;
+  MODIFY `menuId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=307;
 --
 -- 使用表AUTO_INCREMENT `queue`
 --

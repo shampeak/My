@@ -7,6 +7,10 @@ class Addons extends BaseController
 
     public function __construct(){
         parent::__construct();
+        if(!Application('AdminAuth')->isLogin()){
+            R('/man/loginuser');
+        }
+
     }
 
     /**

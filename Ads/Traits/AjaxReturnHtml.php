@@ -1,5 +1,5 @@
 <?php
-namespace Ads\Pm\Traits;
+namespace Ads\Traits;
 
 /**
  * Created by PhpStorm.
