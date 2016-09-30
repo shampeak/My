@@ -87,7 +87,10 @@ class Document
 
         extract($data);
 
-        $entrancefile = $_SERVER['PHP_SELF'];
+//        $entrancefile = $_SERVER['PHP_SELF'];
+
+        $entrancefile = '/addons/?document/page/index';
+
 
         if(!empty($data['ar']) || !empty($data['lm'])){
             $tpl =$this->path.'Lm.php';     //定位到文章显示和栏目显示

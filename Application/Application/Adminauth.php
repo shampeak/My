@@ -37,7 +37,7 @@ class AdminAuth implements \Grace\Base\ModelInterface
         $this->adminName = $this->_config['adminName'] ?: 'singleAdminGuangjuli';
         $this->password = $this->_config['password'] ?: '';
         $this->clientSecret = $this->_config['clientSecret'] ?: '';
-        $this->expireTime = $this->_config['expireTime'] ?intval($this->_config['expireTime']): 3600;
+        $this->expireTime = $this->_config['expireTime'] ?intval($this->_config['expireTime']): 360000;
     }
 
     /**
