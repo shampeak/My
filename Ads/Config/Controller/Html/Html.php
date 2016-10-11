@@ -5,6 +5,7 @@ class Html {
     use \App\Traits\AjaxReturnHtml;
 
     public function doIndex(){
+        return '调用 : Config函数';
     }
 
     //编辑

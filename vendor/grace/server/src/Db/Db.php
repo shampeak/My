@@ -359,7 +359,7 @@ class Db extends Base
             $sets = array();
             foreach ($field_names AS $value) {
                 if (array_key_exists($value, $field_values) == true) {
-                    $sets[] = $value . " = '" . $field_values[$value] . "'";
+                    $sets[] = '`'.$value.'`' . " = '" . $field_values[$value] . "'";
                 }
             }
             if (!empty($sets)) {
@@ -373,85 +373,6 @@ class Db extends Base
             return false;
         }
     }
-
-//
-//      function autoReplace($table, $field_values, $update_values, $where = '', $querymode = ''){
-//            $field_descs = $this->getAll('DESC ' . $table);
-//
-//            $primary_keys = array();
-//            foreach ($field_descs AS $value){
-//                  $field_names[] = $value['Field'];
-//                  if ($value['Key'] == 'PRI'){
-//                        $primary_keys[] = $value['Field'];
-//                  }
-//            }
-//
-//            $fields = $values = array();
-//            foreach ($field_names AS $value){
-//                  if (array_key_exists($value, $field_values) == true){
-//                        $fields[] = $value;
-//                        $values[] = "'" . $field_values[$value] . "'";
-//                  }
-//            }
-//
-//            $sets = array();
-//            foreach ($update_values AS $key => $value){
-//                  if (array_key_exists($key, $field_values) == true){
-//                        if (is_int($value) || is_float($value)){
-//                              $sets[] = $key . ' = ' . $key . ' + ' . $value;
-//                        }else{
-//                              $sets[] = $key . " = '" . $value . "'";
-//                        }
-//                  }
-//            }
-//
-//            $sql = '';
-//            if (empty($primary_keys)){
-//                  if (!empty($fields)){
-//                        $sql = 'INSERT INTO ' . $table . ' (' . implode(', ', $fields) . ') VALUES (' . implode(', ', $values) . ')';
-//                  }
-//            }else{
-//                  if ($this->version() >= '4.1'){
-//                        if (!empty($fields)){
-//                              $sql = 'INSERT INTO ' . $table . ' (' . implode(', ', $fields) . ') VALUES (' . implode(', ', $values) . ')';
-//                              if (!empty($sets)){
-//                                    $sql .=  'ON DUPLICATE KEY UPDATE ' . implode(', ', $sets);
-//                              }
-//                        }
-//                  }else{
-//                        if (empty($where)){
-//                              $where = array();
-//                              foreach ($primary_keys AS $value){
-//                                    if (is_numeric($value)){
-//                                          $where[] = $value . ' = ' . $field_values[$value];
-//                                    }else{
-//                                          $where[] = $value . " = '" . $field_values[$value] . "'";
-//                                    }
-//                              }
-//                              $where = implode(' AND ', $where);
-//                        }
-//
-//                        if ($where && (!empty($sets) || !empty($fields))){
-//                              if (intval($this->getOne("SELECT COUNT(*) FROM $table WHERE $where")) > 0){
-//                                    if (!empty($sets)){
-//                                          $sql = 'UPDATE ' . $table . ' SET ' . implode(', ', $sets) . ' WHERE ' . $where;
-//                                    }
-//                              }else{
-//                                    if (!empty($fields)){
-//                                          $sql = 'REPLACE INTO ' . $table . ' (' . implode(', ', $fields) . ') VALUES (' . implode(', ', $values) . ')';
-//                                    }
-//                              }
-//                        }
-//                  }
-//            }
-//
-//            if ($sql){
-//                  return $this->query($sql, $querymode);
-//            }else{
-//                  return false;
-//            }
-//      }
-
 
     /**
      * @return string

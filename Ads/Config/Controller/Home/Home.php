@@ -8,6 +8,8 @@ class Home extends BaseController {
     }
 
     public function doIndex(){
+        $dt = config('CONFIG_TYPE_LIST');
+        D($dt);
     }
 
 

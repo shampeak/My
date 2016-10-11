@@ -66,22 +66,26 @@ class BaseController{
                         'des'   => '配置管理',
                         'ads'   => 'config/html/man',
                         'hidden'=> 0,
+                        'sort'=>9
                     ],
                     [ 'title' => '系统配置',
                         'des'   => '系统配置',
                         'ads'   => 'config/html/list',
                         'hidden'=> 0,
+                        'sort'=>81
                     ],
                     [ 'title' => '添加',
                         'des'   => '添加',
                         'ads'   => 'config/html/add',
                         'hidden'=> 0,
+                        'sort'=>7
                     ],
 
                     [ 'title' => '编辑',
                         'des'   => '编辑',
                         'ads'   => 'config/html/edit',
                         'hidden'=> 1,
+                        'sort'=>0
                     ],
                 ]
             ]
