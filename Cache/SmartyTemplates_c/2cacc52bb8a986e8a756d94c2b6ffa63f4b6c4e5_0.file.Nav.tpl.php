@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-09-19 15:53:19
+/* Smarty version 3.1.30, created on 2016-10-12 11:32:47
   from "E:\phpleague\Grace\My\Ads\Menu\Views\Widget\Nav.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_57df996f566408_54986982',
+  'unifunc' => 'content_57fdaedf778800_36914578',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2cacc52bb8a986e8a756d94c2b6ffa63f4b6c4e5' => 
     array (
       0 => 'E:\\phpleague\\Grace\\My\\Ads\\Menu\\Views\\Widget\\Nav.tpl',
-      1 => 1474188567,
+      1 => 1476243166,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_57df996f566408_54986982 (Smarty_Internal_Template $_smarty_tpl) {
+function content_57fdaedf778800_36914578 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
@@ -31,7 +31,7 @@ function content_57df996f566408_54986982 (Smarty_Internal_Template $_smarty_tpl)
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/man/">ADM</a>
+            <a class="navbar-brand" href="/">ADM</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-left">

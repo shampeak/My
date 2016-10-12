@@ -58,7 +58,8 @@ class Data
     public function get($key = null)
     {
         if(!empty($key))$this->key = $key;
-        return $this->read();      //读取
+        $res =             $this->read();      //读取
+        return $res;
     }
 
     public function save($value)

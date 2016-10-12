@@ -17,37 +17,61 @@ class Html {
 
     public function doListPost()
     {
-        $res = req('Post')['Datalist'];
-        $this->set("Datalist",$res);
+        $ListDataadsApplication = req('Post')['ListDataadsApplication'];
+        $ListDataadsConfig = req('Post')['ListDataadsConfig'];
+        $ListDataAds            = req('Post')['ListDataAds'];
+        $ListDataAdshtml        = req('Post')['ListDataAdshtml'];
+        $ListDataAdswidget      = req('Post')['ListDataAdswidget'];
+
+
+        application('data')->set("ListDataadsApplication",$ListDataadsApplication);
+        application('data')->set("ListDataadsConfig",$ListDataadsConfig);
+        application('data')->set("ListDataAds",$ListDataAds);
+        application('data')->set("ListDataAdshtml",$ListDataAdshtml);
+        application('data')->set("ListDataAdswidget",$ListDataAdswidget);
+
         R('/man/?setup/html/list');
     }
 
     public function doList(){
-        $res = $this->get("Datalist");
-        //  d($list);
+
+        $ListDataadsApplication = application('data')->get("ListDataadsApplication");
+        $ListDataadsConfig      = application('data')->get("ListDataadsConfig");
+        $ListDataAds            = application('data')->get("ListDataAds");
+        $ListDataAdshtml        = application('data')->get("ListDataAdshtml");
+        $ListDataAdswidget      = application('data')->get("ListDataAdswidget");
+
         return  server('Smarty')->ads('setup/html/list')->fetch('',[
-            'res'  =>  $res
+            'ListDataadsApplication'  =>  $ListDataadsApplication,
+            'ListDataadsConfig' =>  $ListDataadsConfig,
+            'ListDataAds'       =>  $ListDataAds,
+            'ListDataAdshtml'   =>  $ListDataAdshtml,
+            'ListDataAdswidget' =>  $ListDataAdswidget,
         ]);
     }
 
 
-
-
-    public function doLxPost()
+    public function doDyPost()
     {
-        $res = req('Post')['Swlx'];
-        $this->set("Swlx",$res);
-        R('/man/?setup/html/lx');
+        $res = req('Post')['Datadylist'];
+        application('data')->set("Datadylist",$res);
+
+        R('/man/?setup/html/dy');
     }
-    
-    public function doLx(){
-        $res = $this->get("Swlx");
-        //  d($list);
-        return  server('Smarty')->ads('setup/html/lx')->fetch('',[
+
+    /**
+     * @return mixed
+     * 单页内容
+     */
+    public function doDy(){
+        $res = application('data')->get("Datadylist");
+        return  server('Smarty')->ads('setup/html/dy')->fetch('',[
             'res'  =>  $res
         ]);
-
     }
+
+
+
 
 
     public function doEditPost()
@@ -59,6 +83,8 @@ class Html {
         $v['title'] = req('Post')['newtitle'];
         $v['des'] = req('Post')['newdes'];
         $v['url'] = req('Post')['newurl'];
+        $v['bgcolor'] = req('Post')['newbgcolor'];
+
         $list[] = $v;
 
         foreach($list as $key=>$value){
@@ -79,9 +105,12 @@ class Html {
     public function doEdit(){
         $list = $this->get("Nodelist");
       //  d($list);
+        $bgcolorlist = config('INDEX_BG_COLOR');
 
+//D($list);
         return  server('Smarty')->ads('setup/html/edit')->fetch('',[
-            'list'  =>  $list
+            'list'  =>  $list,
+            'bgcolorlist'=>$bgcolorlist
         ]);
 
     }

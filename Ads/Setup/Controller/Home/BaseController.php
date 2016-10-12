@@ -57,9 +57,9 @@ class BaseController{
                         'hidden'=> 0,
                         'sort'=>9
                     ],
-                    [ 'title' => '思维类型',
+                    [ 'title' => '单页内容',
                         'des'   => '修改',
-                        'ads'   => 'setup/html/lx',
+                        'ads'   => 'setup/html/dy',
                         'hidden'=> 0,
                         'sort'=>8
                     ],

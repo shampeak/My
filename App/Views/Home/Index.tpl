@@ -32,7 +32,7 @@
         {foreach from=$list key=key item=item}
         <div class="col-sm-6 col-md-3 col-lg-2">
             <div class="thumbnail">
-                <div class="caption centaton">
+                <div class="caption centaton {$item['bgcolor']}">
                     <h3 class="glyphicon glyphicon-search "><a class="pleft10" href="{$item['url']}">{$item['title']}</a></h3>
                     <p>{$item['des']}</p>
                 </div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-09-28 17:11:41
+/* Smarty version 3.1.30, created on 2016-10-12 11:40:46
   from "E:\phpleague\Grace\My\App\Views\Home\Index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_57eb894dc41fb5_33153715',
+  'unifunc' => 'content_57fdb0be54a6e4_34557728',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e338862b10c16b80ddd420bd6e5aea6eb4b87b9e' => 
     array (
       0 => 'E:\\phpleague\\Grace\\My\\App\\Views\\Home\\Index.tpl',
-      1 => 1475053899,
+      1 => 1476243638,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_57eb894dc41fb5_33153715 (Smarty_Internal_Template $_smarty_tpl) {
+function content_57fdb0be54a6e4_34557728 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -62,7 +62,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['key']->value => $_smarty_tpl->tpl_var
 ?>
         <div class="col-sm-6 col-md-3 col-lg-2">
             <div class="thumbnail">
-                <div class="caption centaton">
+                <div class="caption centaton <?php echo $_smarty_tpl->tpl_vars['item']->value['bgcolor'];?>
+">
                     <h3 class="glyphicon glyphicon-search "><a class="pleft10" href="<?php echo $_smarty_tpl->tpl_vars['item']->value['url'];?>
 "><?php echo $_smarty_tpl->tpl_vars['item']->value['title'];?>
 </a></h3>
