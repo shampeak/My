@@ -46,7 +46,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-
 .gitignore.bak
 .svn
 .idea
@@ -54,7 +53,6 @@ wwwroot/phpMyAdmin
 wwwroot/_
 wwwroot/__
 wwwroot/pagelib/
-tests
 tests
 V/Views/
 _widget/
