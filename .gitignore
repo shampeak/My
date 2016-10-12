@@ -55,7 +55,6 @@ wwwroot/_
 wwwroot/__
 wwwroot/pagelib/
 tests
-Cache/
 tests
 V/Views/
 _widget/
