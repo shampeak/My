@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-12 11:40:46
+/* Smarty version 3.1.30, created on 2016-10-17 11:35:34
   from "E:\phpleague\Grace\My\App\Views\Home\Index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_57fdb0be54a6e4_34557728',
+  'unifunc' => 'content_58044706dc97f8_74095766',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e338862b10c16b80ddd420bd6e5aea6eb4b87b9e' => 
     array (
       0 => 'E:\\phpleague\\Grace\\My\\App\\Views\\Home\\Index.tpl',
-      1 => 1476243638,
+      1 => 1476674826,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_57fdb0be54a6e4_34557728 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58044706dc97f8_74095766 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -52,7 +52,7 @@ function content_57fdb0be54a6e4_34557728 (Smarty_Internal_Template $_smarty_tpl)
     <div class="row">
         <div class="col-sm-12 col-md-12">
             <div class="page-header">
-                <h1>Tables</h1>
+                <h1>Slam</h1>
             </div>
         </div>
         <?php

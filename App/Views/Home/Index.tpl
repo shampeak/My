@@ -26,7 +26,7 @@
     <div class="row">
         <div class="col-sm-12 col-md-12">
             <div class="page-header">
-                <h1>Tables</h1>
+                <h1>Slam</h1>
             </div>
         </div>
         {foreach from=$list key=key item=item}
