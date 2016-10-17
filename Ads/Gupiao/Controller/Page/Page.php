@@ -6,6 +6,9 @@ class Page {
     use \Ads\Traits\AjaxReturnHtml;
 
     public function __construct(){
+        if(!Application('AdminAuth')->isLogin()){
+            R('/man/loginuser');
+        }
     }
 
     public function doAddPost()
