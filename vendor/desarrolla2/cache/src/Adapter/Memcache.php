@@ -82,6 +82,6 @@ class Memcache extends AbstractAdapter
         if (!$ttl) {
             $ttl = $this->ttl;
         }
-        $this->server->set($this->getKey($key), $this->pack($value), false, time() + $ttl);
+        $this->server->set($this->getKey($key), $this->pack($value), false, $ttl);
     }
 }
