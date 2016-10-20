@@ -43,6 +43,31 @@ trait Str
         return $str;
     }
 
+    public function toutf8($str = '')
+    {
+        $encode = mb_detect_encoding($str, array('GB2312','GBK','UTF-8'));
+        if($encode=="GB2312")
+        {
+            $str = iconv("GBK","UTF-8",$str);
+        }
+        else if($encode=="GBK")
+        {
+            $str = iconv("GBK","UTF-8",$str);
+        }
+        else if($encode=="UTF-8")
+        {
+        }
+        else if($encode=="EUC-CN")
+        {
+            $str = iconv("GBK","UTF-8",$str);
+        }
+        else//CP936
+        {
+            $str = iconv("GB2312//IGNORE","UTF-8",$str);
+        }
+        return $str;
+    }
 
+    
 
 }

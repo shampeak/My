@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: 2016-10-11 18:12:23
+-- Generation Time: 2016-10-20 17:57:13
 -- 服务器版本： 5.5.47
 -- PHP Version: 5.5.30
 
@@ -161,12 +161,14 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`menuId`, `package`, `title`, `des`, `ads`, `icon`, `parentId`, `hidden`, `sort`, `active`) VALUES
+(386, 'Xt', '添加', '修改', 'xt/html/add', 'glyphicon glyphicon-home', '384', 0, 8, 0),
 (351, 'Config', '编辑', '编辑', 'config/html/edit', 'glyphicon glyphicon-home', '347', 1, 0, 0),
 (306, 'Sw', '启航', '修改', 'sw/html/index', 'glyphicon glyphicon-home', '305', 0, 9, 0),
-(314, 'Setup', '首页管理', '修改', 'setup/html/edit', 'glyphicon glyphicon-home', '313', 0, 9, 0),
 (305, 'Sw', '思维', '思维管理', 'sw/home/index', 'glyphicon glyphicon-home', '23', 0, 0, 0),
-(315, 'Setup', '思维类型', '修改', 'setup/html/lx', 'glyphicon glyphicon-home', '313', 0, 8, 0),
+(378, 'Mysetup', '我的管理', '前端 : 设置', 'mysetup/home/index', 'glyphicon glyphicon-home', '0', 0, 0, 0),
+(364, 'Setup', '单页内容', '修改', 'setup/html/dy', 'glyphicon glyphicon-home', '362', 0, 8, 0),
 (23, 'Package', 'Package', '', 'Pm/home/index', '', '0', 0, 9, 0),
+(365, 'Setup', '数据中心', '修改', 'setup/html/list', 'glyphicon glyphicon-home', '362', 0, 7, 0),
 (167, 'Menu', '编辑', '编辑', 'menu/html/edit', 'glyphicon glyphicon-home', '164', 1, 30, 0),
 (166, 'Menu', '添加', '添加', 'menu/html/add', 'glyphicon glyphicon-home', '164', 0, 20, 0),
 (165, 'Menu', '列表', '列表', 'menu/html/list', 'glyphicon glyphicon-home', '164', 0, 90, 0),
@@ -181,6 +183,7 @@ INSERT INTO `menu` (`menuId`, `package`, `title`, `des`, `ads`, `icon`, `parentI
 (347, 'Config', '配置', '配置', 'config/html/index', 'glyphicon glyphicon-home', '23', 0, 0, 0),
 (258, 'Queue', 'Stepone', 're', 'queue/html/timere', 'glyphicon glyphicon-home', '256', 0, 20, 0),
 (259, 'Queue', 'Steptwo', 're', 'queue/html2/timere', 'glyphicon glyphicon-home', '256', 0, 20, 0),
+(363, 'Setup', '首页管理', '修改', 'setup/html/edit', 'glyphicon glyphicon-home', '362', 0, 9, 0),
 (175, 'User', '添加', '添加', 'user/html/add', 'glyphicon glyphicon-home', '173', 0, 0, 0),
 (174, 'User', '列表', '用户列表', 'user/html/list', 'glyphicon glyphicon-home', '173', 0, 0, 0),
 (251, 'Msource', 'SteptwoData', '设置', 'msource/html/steptwodata', 'glyphicon glyphicon-home', '247', 0, 0, 0),
@@ -188,10 +191,13 @@ INSERT INTO `menu` (`menuId`, `package`, `title`, `des`, `ads`, `icon`, `parentI
 (257, 'Queue', '列表', '列表', 'queue/html/list', 'glyphicon glyphicon-home', '256', 0, 90, 0),
 (222, 'Mclass', '列表', '列表', 'mclass/html/list', 'glyphicon glyphicon-home', '221', 0, 30, 0),
 (223, 'Mclass', '设置', '设置', 'mclass/html/edit', 'glyphicon glyphicon-home', '221', 0, 0, 0),
-(316, 'Setup', '数据中心', '修改', 'setup/html/list', 'glyphicon glyphicon-home', '313', 0, 7, 0),
 (249, 'Msource', '设置', '设置', 'msource/html/edit', 'glyphicon glyphicon-home', '247', 0, 0, 0),
-(313, 'Setup', '管理', '前端 : 设置', 'setup/home/index', 'glyphicon glyphicon-home', '0', 0, 0, 0),
-(248, 'Msource', '列表', '列表', 'msource/html/list', 'glyphicon glyphicon-home', '247', 0, 30, 0);
+(248, 'Msource', '列表', '列表', 'msource/html/list', 'glyphicon glyphicon-home', '247', 0, 30, 0),
+(379, 'Mysetup', '首页管理', '修改', 'mysetup/html/edit', 'glyphicon glyphicon-home', '378', 0, 9, 0),
+(385, 'Xt', '列表', '修改', 'xt/html/index', 'glyphicon glyphicon-home', '384', 0, 9, 0),
+(384, 'Xt', '习题', '思维管理', 'xt/home/index', 'glyphicon glyphicon-home', '23', 0, 0, 0),
+(387, 'Xt', '添加文档习题', '修改', 'xt/html/addwd', 'glyphicon glyphicon-home', '384', 0, 8, 0),
+(388, 'Xt', '修改', '', 'xt/html/edit', 'glyphicon glyphicon-home', '384', 1, 9, 0);
 
 -- --------------------------------------------------------
 
@@ -269,6 +275,7 @@ CREATE TABLE `system_config` (
 INSERT INTO `system_config` (`id`, `name`, `type`, `title`, `group`, `extra`, `remark`, `create_time`, `update_time`, `status`, `value`, `sort`) VALUES
 (9, 'CONFIG_TYPE_LIST', 3, '配置类型列表', 9, '', '主要用于数据解析和页面表单的生成', 1378898976, 1379235348, 1, '0:数字\r\n1:字符\r\n2:文本\r\n3:数组\r\n4:枚举', 2),
 (20, 'CONFIG_GROUP_LIST', 3, '配置分组', 9, '', '配置分组', 1379228036, 1384418383, 1, '1:基本\r\n3:用户\r\n4:系统\r\n5:站点\r\n9:基础', 4),
+(67, 'INDEX_BG_COLOR', 3, '背景色', 3, '', '选择区域北京颜色', 0, 0, 1, 'bg-success:bg-success\r\nbg-info:bg-info\r\nbg-warning:bg-warning\r\nbg-danger:bg-danger', 0),
 (66, 'DOCUMENT_ROOT_PATH', 1, '文档地址', 3, '', '文档系统的文档存放地址', 0, 0, 1, '../UserDocument/Store/', 0);
 
 -- --------------------------------------------------------
@@ -354,6 +361,22 @@ INSERT INTO `user_group` (`groupId`, `groupName`, `groupChr`, `active`, `sort`, 
 (20, 'Android', 'Android', 1, 0, 'Android 用户'),
 (12, '医生', 'doctor', 0, 0, '医生用户');
 
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `xt`
+--
+
+CREATE TABLE `xt` (
+  `id` int(11) NOT NULL,
+  `path` varchar(128) DEFAULT NULL,
+  `name` varchar(128) NOT NULL,
+  `question` varchar(256) DEFAULT NULL,
+  `type` varchar(32) DEFAULT NULL,
+  `ansoption` varchar(256) DEFAULT NULL,
+  `ans` text
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 --
 -- Indexes for dumped tables
 --
@@ -425,6 +448,12 @@ ALTER TABLE `user_group`
   ADD PRIMARY KEY (`groupId`);
 
 --
+-- Indexes for table `xt`
+--
+ALTER TABLE `xt`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 在导出的表使用AUTO_INCREMENT
 --
 
@@ -447,7 +476,7 @@ ALTER TABLE `gupiao_optgroup`
 -- 使用表AUTO_INCREMENT `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `menuId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=352;
+  MODIFY `menuId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=389;
 --
 -- 使用表AUTO_INCREMENT `queue`
 --
@@ -462,7 +491,7 @@ ALTER TABLE `sw`
 -- 使用表AUTO_INCREMENT `system_config`
 --
 ALTER TABLE `system_config`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '配置ID', AUTO_INCREMENT=67;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '配置ID', AUTO_INCREMENT=68;
 --
 -- 使用表AUTO_INCREMENT `token`
 --
@@ -478,6 +507,11 @@ ALTER TABLE `user`
 --
 ALTER TABLE `user_group`
   MODIFY `groupId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+--
+-- 使用表AUTO_INCREMENT `xt`
+--
+ALTER TABLE `xt`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

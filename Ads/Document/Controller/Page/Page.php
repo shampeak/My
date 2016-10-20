@@ -198,7 +198,6 @@ class Page {
             $key = iconv("GB2312//IGNORE","UTF-8",$key);
         }
         return $key;
-
     }
 
 
