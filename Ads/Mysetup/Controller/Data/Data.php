@@ -1,5 +1,5 @@
 <?php
-namespace Ads\Setup\Controller\Data;
+namespace Ads\Mysetup\Controller\Data;
 
 class Data {
 
@@ -31,7 +31,5 @@ class Data {
         }
         return $res;
     }
-
-
 
 }

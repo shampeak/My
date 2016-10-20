@@ -1,5 +1,5 @@
 <?php
-namespace Ads\Setup\Controller\Html;
+namespace Ads\Mysetup\Controller\Html;
 
 class Html {
 
@@ -39,7 +39,7 @@ class Html {
         array_multisort($newArr,SORT_ASC, $list);
 
         $this->set("Nodelist",$list);
-        R('/man/?setup/html/edit');
+        R('/man/?mysetup/html/edit');
     }
 
     public function doEdit(){
@@ -48,7 +48,7 @@ class Html {
         $bgcolorlist = config('INDEX_BG_COLOR');
 
 //D($list);
-        return  server('Smarty')->ads('setup/html/edit')->fetch('',[
+        return  server('Smarty')->ads('mysetup/html/edit')->fetch('',[
             'list'  =>  $list,
             'bgcolorlist'=>$bgcolorlist
         ]);

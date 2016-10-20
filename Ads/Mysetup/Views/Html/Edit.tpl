@@ -1,5 +1,5 @@
 <div class="row">
-    <form class="form-horizontal" method="post" action="/man/?setup/html/edit">
+    <form class="form-horizontal" method="post" action="/man/?mysetup/html/edit">
         <div class="col-md-6 ">
 
             <div class="page-header">

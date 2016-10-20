@@ -16,8 +16,7 @@ class Home extends BaseController
     public function doIndex()
     {
 
-        $list = adsdata('setup/data/list');
-
+        $list = adsdata('mysetup/data/list');
         view('',[
             'list' => $list
         ]);

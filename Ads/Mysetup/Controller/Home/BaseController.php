@@ -1,6 +1,6 @@
 <?php
 
-namespace Ads\Setup\Controller\Home;
+namespace Ads\Mysetup\Controller\Home;
 
 //hook
 class BaseController{
@@ -46,30 +46,17 @@ class BaseController{
 
         $res = [
             [
-                'title' => '管理',
+                'title' => '我的管理',
                 'des'   => '前端 : 设置',
-                'ads'   => 'setup/home/index',
+                'ads'   => 'mysetup/home/index',
                 'hidden'=> 0,
                 'child' => [
                     [ 'title' => '首页管理',
                         'des'   => '修改',
-                        'ads'   => 'setup/html/edit',
+                        'ads'   => 'mysetup/html/edit',
                         'hidden'=> 0,
                         'sort'=>9
                     ],
-                    [ 'title' => '单页内容',
-                        'des'   => '修改',
-                        'ads'   => 'setup/html/dy',
-                        'hidden'=> 0,
-                        'sort'=>8
-                    ],
-                    [ 'title' => '数据中心',
-                        'des'   => '修改',
-                        'ads'   => 'setup/html/list',
-                        'hidden'=> 0,
-                        'sort'=>7
-                    ],
-
                 ]
             ]
         ];
