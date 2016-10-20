@@ -1,13 +1,61 @@
 <?php
 
 
-/*
-0:数字
-1:字符
-2:文本
-3:数组
-4:枚举
-*/
+
+    /*
+     |-------------------------------------------------------
+     | 封装
+     |-------------------------------------------------------
+    */
+    if (! function_exists('fc')) {
+        function fc($key = null,$params = null)
+        {
+            if(empty($key))return null;
+            $key = (string)$key;
+            //检索数据库,得到数据类型
+            $key = saddslashes($key);
+            $data = '';
+
+            $row = server('db')->getrow("select * from facede where facede = '$key'");
+
+            if($row['cache'] == 1 && !empty($row['expire'])){       //缓存
+                //===========================================================
+                $_params = '';
+                if(!empty($params))$_params = serialize($params);
+                $cachekey = md5($key.$_params);
+                //===========================================================
+
+                if(server('cache')->has($cachekey)){
+                    $data = server('cache')->get($cachekey);
+                    return $data;
+                }
+            }
+
+            $type = $row['type'];       //Application / Config / Ads / Adshtml / Adswidget
+            switch($type){
+                case 'Application':
+                    $data = application('Data')->get($row['chr']);
+                    break;
+                case 'Config':
+                    $data = config($row['chr']);
+                    break;
+                case 'Ads':
+                case 'Adshtml':
+                case 'Adswidget':
+                $data = adsdata($row['chr'],$params);
+                    break;
+            }
+
+            if($row['cache'] == 1 && !empty($row['expire'])){   //缓存
+                server('cache')->set($cachekey,$data,intval($row['expire']));
+            }
+
+            return $data;
+
+        }
+    }
+
+/*0:数字1:字符2:文本3:数组4:枚举*/
     if (! function_exists('config')) {
         function config($name = null)
         {
@@ -43,11 +91,15 @@
     }
 
 
-/*
- |-------------------------------------------------------
- | 封装
- |-------------------------------------------------------
-*/
+
+
+
+
+
+
+
+
+
 
     /**
      * 对APP application server 进行封装
