@@ -1,26 +1,27 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-09-29 11:48:20
+/* Smarty version 3.1.30, created on 2016-10-21 10:06:21
   from "E:\phpleague\Grace\My\Ads\Gupiao\Views\Page\Code.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_57ec8f04a5c088_27508691',
+  'unifunc' => 'content_5809781d718ea5_67022153',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '623dd6d7efefbf79188844e3e39169d70f152464' => 
     array (
       0 => 'E:\\phpleague\\Grace\\My\\Ads\\Gupiao\\Views\\Page\\Code.tpl',
-      1 => 1475120893,
+      1 => 1477015571,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:../Widget/Top.tpl' => 1,
   ),
 ),false)) {
-function content_57ec8f04a5c088_27508691 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5809781d718ea5_67022153 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_date_format')) require_once 'E:\\phpleague\\Grace\\My\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.date_format.php';
 ?>
 <!DOCTYPE html>
@@ -49,7 +50,8 @@ if (!is_callable('smarty_modifier_date_format')) require_once 'E:\\phpleague\\Gr
 
 <div class="container-fluid">
 
-    <?php echo smarty_function_widget(array('ads'=>"gupiao/widget/top"),$_smarty_tpl);?>
+    <?php $_smarty_tpl->_subTemplateRender("file:../Widget/Top.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 
     <div class="row">

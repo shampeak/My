@@ -20,9 +20,8 @@
         <div class="col-md-12" id="te">
 
             <div class="list-group">
-                <a href="/" class="list-group-item active  btn-lg">
-                    财富之路
-                </a>
+                {include file='../Widget/HeadINdex.tpl'}
+
                 {foreach from=$list key=key item=item}
                     <a href="/addons/?gupiao/page/code&code={$item['code']}" class="list-group-item btn btn-primary btn-lg">{$item['title']}</a>
                 {/foreach}

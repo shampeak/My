@@ -17,7 +17,7 @@
 
 <div class="container-fluid">
 
-    {widget ads="gupiao/widget/top"}
+    {include file='../Widget/Top.tpl'}
 
     <div class="row">
         <div class="col-xs-12" id="te">

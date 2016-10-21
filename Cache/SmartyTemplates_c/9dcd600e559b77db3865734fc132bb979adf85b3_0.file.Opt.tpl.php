@@ -1,26 +1,27 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-09-29 11:50:23
+/* Smarty version 3.1.30, created on 2016-10-21 10:06:12
   from "E:\phpleague\Grace\My\Ads\Gupiao\Views\Page\Opt.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_57ec8f7f43b4f6_29714683',
+  'unifunc' => 'content_58097814a07688_67270125',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9dcd600e559b77db3865734fc132bb979adf85b3' => 
     array (
       0 => 'E:\\phpleague\\Grace\\My\\Ads\\Gupiao\\Views\\Page\\Opt.tpl',
-      1 => 1475120970,
+      1 => 1477015544,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:../Widget/Top.tpl' => 1,
   ),
 ),false)) {
-function content_57ec8f7f43b4f6_29714683 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58097814a07688_67270125 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -43,7 +44,8 @@ function content_57ec8f7f43b4f6_29714683 (Smarty_Internal_Template $_smarty_tpl)
 
 <div class="container-fluid">
 
-    <?php echo smarty_function_widget(array('ads'=>"gupiao/widget/top"),$_smarty_tpl);?>
+    <?php $_smarty_tpl->_subTemplateRender("file:../Widget/Top.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 
     <div class="row">

@@ -1,26 +1,27 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-09-29 13:48:13
+/* Smarty version 3.1.30, created on 2016-10-21 10:07:10
   from "E:\phpleague\Grace\My\Ads\Gupiao\Views\Page\Index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_57ecab1d280110_01895168',
+  'unifunc' => 'content_5809784eaa3d72_87678208',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd7084d45a79c1dcddd8301c6d0ced40ab7b9795d' => 
     array (
       0 => 'E:\\phpleague\\Grace\\My\\Ads\\Gupiao\\Views\\Page\\Index.tpl',
-      1 => 1475127713,
+      1 => 1477015626,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:../Widget/HeadINdex.tpl' => 1,
   ),
 ),false)) {
-function content_57ecab1d280110_01895168 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5809784eaa3d72_87678208 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -46,9 +47,10 @@ function content_57ecab1d280110_01895168 (Smarty_Internal_Template $_smarty_tpl)
         <div class="col-md-12" id="te">
 
             <div class="list-group">
-                <a href="/" class="list-group-item active  btn-lg">
-                    财富之路
-                </a>
+                <?php $_smarty_tpl->_subTemplateRender("file:../Widget/HeadINdex.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+
                 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['list']->value, 'item', false, 'key');
 if ($_from !== null) {
