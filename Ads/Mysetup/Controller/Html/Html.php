@@ -21,8 +21,8 @@ class Html {
         //sort($list);
 
         $v['title'] = req('Post')['newtitle'];
-        $v['des'] = req('Post')['newdes'];
-        $v['url'] = req('Post')['newurl'];
+        $v['des']   = req('Post')['newdes'];
+        $v['url']   = req('Post')['newurl'];
         $v['bgcolor'] = req('Post')['newbgcolor'];
 
         $list[] = $v;
